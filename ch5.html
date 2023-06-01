@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chapter 5: Database Integration with Flask</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Flask Companion Website</h1>
+        <nav>
+            <a href="ch1.html">Chapter 1</a>
+            <a href="ch2.html">Chapter 2</a>
+            <a href="ch3.html">Chapter 3</a>
+            <a href="ch4.html">Chapter 4</a>
+            <a href="ch5.html">Chapter 5</a>
+            <a href="ch6.html">Chapter 6</a>
+            <a href="ch7.html">Chapter 7</a>
+            <a href="ch8.html">Chapter 8</a>
+            <!-- Add links to other chapters -->
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Chapter 5: Database Integration with Flask</h2>
+        <h3>Setting Up a Database</h3>
+        <p>Flask can work with various databases. One popular choice is SQLite, which is a lightweight, file-based database.</p>
+        
+        <h3>Connecting to the Database</h3>
+        <p>To connect to a SQLite database, you can use the `sqlite3` module from the Python standard library.</p>
+        <pre><code>import sqlite3
+
+conn = sqlite3.connect('database.db')
+cursor = conn.cursor()
+
+# Execute database queries
+
+cursor.close()
+conn.close()</code></pre>
+        
+        <h3>Executing Queries</h3>
+        <p>You can execute SQL queries using the `execute()` method of the cursor object.</p>
+        <pre><code>cursor.execute('SELECT * FROM users')
+results = cursor.fetchall()
+
+for row in results:
+    print(row)</code></pre>
+        
+        <h3>Using Flask-SQLAlchemy</h3>
+        <p>Flask-SQLAlchemy is an extension that simplifies database integration by providing an object-relational mapper (ORM).</p>
+        <pre><code>from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+db = SQLAlchemy(app)
+
+# Define database models
+
+if __name__ == '__main__':
+    app.run()</code></pre>
+        
+        <h3>Screenshot</h3>
+        <img src="ch5_screenshot.png" alt="Chapter 5 Screenshot">
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
