@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chapter 4: Request and Response Handling</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Flask Companion Website</h1>
+        <nav>
+            <a href="ch1.html">Chapter 1</a>
+            <a href="ch2.html">Chapter 2</a>
+            <a href="ch3.html">Chapter 3</a>
+            <a href="ch4.html">Chapter 4</a>
+            <a href="ch5.html">Chapter 5</a>
+            <a href="ch6.html">Chapter 6</a>
+            <a href="ch7.html">Chapter 7</a>
+            <a href="ch8.html">Chapter 8</a>
+            <!-- Add links to other chapters -->
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Chapter 4: Request and Response Handling</h2>
+        <h3>Handling Form Data</h3>
+        <p>Flask provides methods to handle form data submitted by users. You can access form data using the `request.form` object.</p>
+        
+        <h3>Handling HTTP Methods</h3>
+        <p>Flask supports different HTTP methods like GET and POST. You can specify the allowed methods using the `methods` parameter in the route decorator.</p>
+        <pre><code>from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        # Process login data
+        return 'Login Successful'
+    else:
+        return 'Please login'
+
+if __name__ == '__main__':
+    app.run()</code></pre>
+        
+        <h3>Sending Redirects</h3>
+        <p>Flask allows you to send redirects to other URLs. You can use the `redirect()` function and specify the target URL.</p>
+        <pre><code>from flask import Flask, redirect
+
+app = Flask(__name__)
+
+@app.route('/redirect')
+def redirect_example():
+    return redirect('/login')
+
+if __name__ == '__main__':
+    app.run()</code></pre>
+        
+        <h3>Screenshot</h3>
+        <img src="ch4_screenshot.png" alt="Chapter 4 Screenshot">
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
