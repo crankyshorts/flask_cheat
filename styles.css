@@ -1,0 +1,34 @@
+body {
+  background-color: #e3f2fd; /* Light blue */
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.box {
+  background-color: #f44336; /* Red */
+  color: #ffffff; /* White */
+  padding: 20px;
+  text-align: center;
+}
+
+.box:nth-child(2n) {
+  background-color: #3f51b5; /* Indigo */
+}
+
+.box:nth-child(3n) {
+  background-color: #4caf50; /* Green */
+}
+
+.box h2 {
+  margin-top: 0;
+}
+
+.box p {
+  margin-bottom: 0;
+}
