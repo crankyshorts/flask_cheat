@@ -3,32 +3,54 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  padding: 20px;
-}
-
-.box {
+header {
   background-color: #f44336; /* Red */
-  color: #ffffff; /* White */
   padding: 20px;
+  color: #ffffff; /* White */
+}
+
+h1 {
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+nav a {
+  color: #ffffff; /* White */
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav a:hover {
+  background-color: #ffffff; /* White */
+  color: #f44336; /* Red */
+}
+
+main {
+  padding: 20px;
+}
+
+h2, h3 {
+  color: #f44336; /* Red */
+}
+
+code {
+  background-color: #ffffff; /* White */
+  padding: 5px;
+}
+
+img {
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+footer {
+  background-color: #f44336; /* Red */
+  padding: 20px;
+  color: #ffffff; /* White */
   text-align: center;
-}
-
-.box:nth-child(2n) {
-  background-color: #3f51b5; /* Indigo */
-}
-
-.box:nth-child(3n) {
-  background-color: #4caf50; /* Green */
-}
-
-.box h2 {
-  margin-top: 0;
-}
-
-.box p {
-  margin-bottom: 0;
 }
