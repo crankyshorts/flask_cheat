@@ -1,0 +1,84 @@
+Chapter 8: Deploying Flask Applications (ch8.html)
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chapter 8: Deploying Flask Applications</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Flask Companion Website</h1>
+        <nav>
+            <a href="ch1.html">Chapter 1</a>
+            <a href="ch2.html">Chapter 2</a>
+            <a href="ch3.html">Chapter 3</a>
+            <a href="ch4.html">Chapter 4</a>
+            <a href="ch5.html">Chapter 5</a>
+            <a href="ch6.html">Chapter 6</a>
+            <a href="ch7.html">Chapter 7</a>
+            <a href="ch8.html">Chapter 8</a>
+            <!-- Add links to other chapters -->
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Chapter 8: Deploying Flask Applications</h2>
+        <h3>Deployment Options</h3>
+        <p>There are various options available for deploying Flask applications, depending on your needs and requirements.</p>
+        
+        <h3>Deploying to a Web Server</h3>
+        <p>You can deploy your Flask application to a web server like Apache or Nginx using a WSGI server such as uWSGI or Gunicorn.</p>
+        <pre><code># Example uWSGI configuration file
+
+[uwsgi]
+module = wsgi:app
+
+master = true
+processes = 4
+
+socket = myapp.sock
+chmod-socket = 660
+vacuum = true
+
+die-on-term = true</code></pre>
+        
+        <h3>Deploying to a Platform as a Service (PaaS)</h3>
+        <p>Platform as a Service providers like Heroku and Google App Engine offer easy deployment options for Flask applications.</p>
+        <pre><code># Example Procfile for Heroku
+
+web: gunicorn wsgi:app</code></pre>
+        
+        <h3>Containerization with Docker</h3>
+        <p>Docker allows you to package your Flask application and its dependencies into a container for easy deployment.</p>
+        <pre><code># Example Dockerfile
+
+FROM python:3.9
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY . .
+
+CMD [ "python", "app.py" ]</code></pre>
+        
+        <h3>Screenshot</h3>
+        <img src="ch8_screenshot.png" alt="Chapter 8 Screenshot">
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+```
+
+Repeat the above HTML structure for each chapter, and customize the content, screenshots, and code snippets accordingly. Make sure to update the `href` attributes in the navigation menu to link to the correct HTML files for each chapter.
+
+Remember to save each file with the corresponding chapter number (e.g., `ch9.html`, etc.). Additionally, place the respective screenshots in the same directory and update the `src` attribute of the `<img>` tag to match the correct file name.
+
+You can customize the CSS styles in the `styles.css` file to enhance the design and layout of each chapter's HTML file.
+
+Note: The code snippets and screenshots provided in this example are placeholders. Please replace them with your actual content, code snippets, and screenshots for each chapter
