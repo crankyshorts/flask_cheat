@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chapter 3: Templates and Static Files</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Flask Companion Website</h1>
+        <nav>
+        <nav>
+            <a href="ch1.html">Chapter 1</a>
+            <a href="ch2.html">Chapter 2</a>
+            <a href="ch3.html">Chapter 3</a>
+            <a href="ch4.html">Chapter 4</a>
+            <a href="ch5.html">Chapter 5</a>
+            <a href="ch6.html">Chapter 6</a>
+            <a href="ch7.html">Chapter 7</a>
+            <a href="ch8.html">Chapter 8</a>
+            <!-- Add links to other chapters -->
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Chapter 3: Templates and Static Files</h2>
+        <h3>Using Templates</h3>
+        <p>Flask allows you to use templates to create dynamic HTML pages. Templates are HTML files with placeholders for dynamic data.</p>
+        
+        <h3>Rendering Templates</h3>
+        <p>To render a template, you need to use the `render_template()` function and pass the template name along with any necessary data.</p>
+        <pre><code>from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/profile/<username>')
+def profile(username):
+    return render_template('profile.html', username=username)
+
+if __name__ == '__main__':
+    app.run()</code></pre>
+        
+        <h3>Serving Static Files</h3>
+        <p>Flask can serve static files such as CSS stylesheets, JavaScript files, and images. You can store them in a directory named `static`.</p>
+        <pre><code>&lt;link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"&gt;</code></pre>
+        
+        <h3>Screenshot</h3>
+        <img src="ch3_screenshot.png" alt="Chapter 3 Screenshot">
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
